@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(243, 243, 243);
+    font-family: Arial, Helvetica, sans-serif;
+}
+:root{
+    --textBlue: #0c5adb;
+    --textP: #616161;
+    --barAnimate: #cbbded;
+    --bgPill: rgba(12,90,219,0.10);
+}
+.container{
+    width: 1140px;
+    height: auto;
+    margin: 50px auto;
+}
+.col-left{
+    width: 50%;
+    height: 500px;
+    float: left;
+}
+.col-left .txt-head h1{
+    margin-top: 18px;
+    font-size: 45px;
+}
+.col-left .txt-head h1::after{
+    content: " Solutions.";
+    color: var(--textBlue);
+}
+.col-left .txt-head span{
+    font-size: 18px;
+    letter-spacing: 7px;
+    word-spacing: 10px;
+    color: var(--textBlue);
+}
+.col-left .txt-head .animate-dot{
+    margin: 25px 0;
+    width: 110px;
+    height: 5px;
+    background-color: var(--barAnimate);
+    border-radius: 5px;
+    position: relative;
+}
+.col-left .txt-head .animate-dot::after{
+    content: "";
+    position: absolute;
+    top: -5px;
+
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--textBlue);
+
+    animation-name: animateDot;
+    animation-duration: 3s;
+    animation-direction: normal;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes animateDot {
+    from{
+        left: 0%;
+    }
+    to{
+        left: 98%;
+    }
+}
+.col-left .txt-body p{
+    font-size: 20px;
+    color: var(--textP);
+    word-spacing: 2px;
+    line-height: 32px;
+}
+.col-left .txt-body .txt-detail{
+    margin-top: 40px;
+    display: flex;
+}
+.col-left .txt-body .txt-detail .content{
+    width: 70%;
+    margin-left: 40px;
+}
+.col-left .txt-body .txt-detail h1{
+    font-size: 22px;
+}
+.col-left .txt-body .txt-detail p{
+    margin-top: 14px;
+    font-size: 18px;
+    color: var(--textP);
+    word-spacing: 0;
+}
+.col-left .txt-body .txt-detail .pill{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+}
+.col-left .txt-body .txt-detail .pill::before{
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: -3px;
+    left: -8px;
+    font-size: 40px;
+    background-color: var(--bgPill);
+    box-shadow: -10px 10px 20px 0px rgb(0 0 0 / 20%);
+}
+.col-left .txt-body .txt-detail i{
+    color: var(--textBlue);
+    font-size: 30px;
+    margin: auto;
+}
+
+
+
+
+.col-right{
+    position: relative;
+    width: 50%;
+    height: 500px;
+    float: left;
+}
+.col-right img:first-child{
+    position: absolute;
+    width: 100%;
+}
+.col-right img:nth-child(2){
+    width: 60px;
+    position: absolute;
+    bottom: 5px;
+    right: 30%;
+
+    animation: PersonAnimate .7s infinite alternate;
+}
+.col-right img:last-child{
+    position: absolute;
+    right: 30%;
+    top: 35%;
+    animation: PersonAnimate .7s infinite alternate;
+}
+@keyframes PersonAnimate {
+    from{
+        margin-top: 10px;
+    }
+    to{
+        margin-bottom: 25px;
+    }
+}
